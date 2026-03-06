@@ -21,4 +21,13 @@ public class LoginScreen extends BasePage {
         click(createNewAccountButton);
         return new SignUpScreen(driver);
     }
+
+    public Boolean isLoginScreenDisplayed() {
+        if (createNewAccountButton.isDisplayed()) {
+            System.out.println("Login Screen is displayed");
+        } else {
+            System.out.println("Login Screen is not displayed");
+        }
+        return createNewAccountButton.isDisplayed();
+    }
 }

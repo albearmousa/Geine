@@ -9,6 +9,9 @@ public class SignUpScreen extends BasePage {
 
     AndroidActions androidActions;
 
+    @AndroidFindBy(accessibility = "إنشاء حساب جديد ")
+    private WebElement signUpHeader;
+
     @AndroidFindBy(xpath = "//android.widget.ScrollView/android.widget.EditText[1]")
     private WebElement firstNameField;
 
@@ -41,46 +44,63 @@ public class SignUpScreen extends BasePage {
         androidActions = new AndroidActions(driver);
     }
 
-    public void setFirstNameField(String text) {
+    public SignUpScreen setFirstNameField(String text) {
         click(firstNameField);
         sendKeys(firstNameField, text);
+        return this;
     }
 
-    public void setMobileNumberField(String number) {
+    public SignUpScreen setMobileNumberField(String number) {
         click(mobileNumberField);
         sendKeys(mobileNumberField, number);
+        return this;
     }
 
-    public void setEmailField(String email) {
+    public SignUpScreen setEmailField(String email) {
         click(emailField);
         sendKeys(emailField, email);
+        return this;
     }
 
-    public void setCityDropDown() {
+    public SignUpScreen setCityDropDown() {
         click(cityDropDown);
         click(cityOption);
-
+        return this;
     }
 
-    public void setPasswordField(String password) {
+    public SignUpScreen setPasswordField(String password) {
         click(passwordField);
         sendKeys(passwordField, password);
+        return this;
     }
 
-    public void setConfirmPasswordField(String confirmPassword) {
+    public SignUpScreen setConfirmPasswordField(String confirmPassword) {
         click(confirmPasswordField);
         sendKeys(confirmPasswordField, confirmPassword);
+        return this;
     }
 
-    public void setCreateAccountButton(String text) throws InterruptedException {
+    public SignUpScreen setCreateAccountButton(String text) {
         androidActions.scrollToText(text);
         waitForClickability(createAccountButton);
         click(createAccountButton);
+        return this;
     }
 
-    public void setValidationErrors() {
+    public SignUpScreen setValidationErrors() {
         waitForVisibility(validationErrors);
         isDisplayed(validationErrors);
         System.out.println("Validation errors are displayed: " + validationErrors.isDisplayed());
+        return this;
     }
+
+    public Boolean isSignUpScreenDisplayed() {
+        if (signUpHeader.isDisplayed()) {
+            System.out.println("Sign Up Screen is displayed");
+        } else {
+            System.out.println("Sign Up Screen is not displayed");
+        }
+        return signUpHeader.isDisplayed();
+    }
+
 }

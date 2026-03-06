@@ -2,7 +2,6 @@ package tests;
 
 import base.AndroidBaseTest;
 import org.testng.annotations.Test;
-import pages.HomeScreen;
 import pages.LoginScreen;
 
 public class TestLoginScreen extends AndroidBaseTest {
@@ -10,9 +9,6 @@ public class TestLoginScreen extends AndroidBaseTest {
 
     @Test
     public void LoginScreenTest() {
-        HomeScreen homeScreen = new HomeScreen(driver);
-        homeScreen.setMyAccountTab();
-        loginScreen = new LoginScreen(driver);
         loginScreen.setCreateNewAccountButton();
     }
 }
