@@ -80,11 +80,11 @@ public class SignUpScreen extends BasePage {
         return this;
     }
 
-    public SignUpScreen setCreateAccountButton(String text) {
+    public HomeScreen setCreateAccountButton(String text) {
         androidActions.scrollToText(text);
         waitForClickability(createAccountButton);
         click(createAccountButton);
-        return this;
+        return new HomeScreen(driver);
     }
 
     public SignUpScreen setValidationErrors() {

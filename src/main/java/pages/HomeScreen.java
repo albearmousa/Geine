@@ -17,4 +17,13 @@ public class HomeScreen extends BasePage {
         click(myAccountTab);
         return new LoginScreen(driver);
     }
+
+    public Boolean isHomeScreenDisplayed() {
+        if (myAccountTab.isDisplayed()) {
+            System.out.println("Home screen is displayed");
+        } else {
+            System.out.println("Home screen is not displayed");
+        }
+        return myAccountTab.isDisplayed();
+    }
 }

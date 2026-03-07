@@ -7,7 +7,6 @@ import pages.HomeScreen;
 import pages.LoginScreen;
 
 public class TestHomeScreen extends AndroidBaseTest {
-    HomeScreen homeScreen;
 
     @Test
     public void userCanOpenLoginScreenFromHome() {

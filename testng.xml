@@ -7,7 +7,7 @@
     </listeners>
 
     <test name="Android Tests">
-        
+
         <classes>
             <!--            <class name="tests.TestHomeScreen"/>-->
 
